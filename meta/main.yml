@@ -1,6 +1,6 @@
 galaxy_info:
   author: Matthias Gronwald
-  description: 
+  description: Copies the local git config into the vagrant users home on the box.
   company: VOTUM
   
   # If the issue tracker for your role is not on github, uncomment the
