@@ -1,0 +1,4 @@
+---
+votum_vagrant_gitconfig_path_local: "~/.gitconfig"
+votum_vagrant_gitconfig_filemode: 0644
+votum_vagrant_home_dir: "/home/vagrant"

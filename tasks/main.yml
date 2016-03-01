@@ -1,0 +1,12 @@
+---
+- name: check if a local .gitconfig exists
+  local_action: stat path="{{ votum_vagrant_gitconfig_path_local }}"
+  register: stat_gitconfig
+
+- name: check if a remote vagrant user home dir exists
+  stat: "path={{ votum_vagrant_home_dir }}"
+  register: stat_vagrant_home
+
+- name: copy local .gitconfig into box
+  copy: "src={{ votum_vagrant_gitconfig_path_local }} dest={{ votum_vagrant_home_dir }}/.gitconfig mode={{ votum_vagrant_gitconfig_filemode }}"
+  when: stat_gitconfig.stat.exists and stat_vagrant_home.stat.exists
